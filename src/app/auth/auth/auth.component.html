@@ -1,0 +1,5 @@
+<form class="container">
+  <input type="text" class="row" [(ngModel)]="user.name" id="username" name="username"/>
+  <input type="password" class="row" [(ngModel)]="user.password" id="password" name="password"/>
+  <button class="row btn btn-primary" (click)="login()">Login</button>
+</form>
