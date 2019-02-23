@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { UserCredential } from './UserCredential';
 
 @Component({
   selector: 'app-auth',
@@ -9,9 +10,11 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit {
   public userStatus: string;
+  public user: UserCredential;
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.user = new UserCredential();
   }
 
   setUserStatus() {

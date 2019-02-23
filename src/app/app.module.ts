@@ -8,7 +8,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MatButtonModule, MatCardModule, MatProgressBarModule, MatToolbarModule } from '@angular/material';
 
 
 @NgModule({
@@ -19,6 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
   BrowserModule,
     HttpClientModule,
+    MatToolbarModule,
+    MatProgressBarModule,
+    MatButtonModule,
+    MatCardModule,
     AuthModule,
     ProductModule,
     UserModule,

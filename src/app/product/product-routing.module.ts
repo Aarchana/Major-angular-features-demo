@@ -6,9 +6,9 @@ import { AuthGuard } from '../auth/auth.guard';
 import { DetailResolverService } from './detail-resolver.service';
 
 const routes: Routes = [
-  {path: 'products', component: ProductListComponent,
+  {path: 'products', component: ProductListComponent, canActivateChild: [AuthGuard],
     children: [
-      { path: ':id', component: ProductDetailComponent, canActivate: [AuthGuard], resolve: {
+      { path: ':id', component: ProductDetailComponent, resolve: {
         product: DetailResolverService
       }}
     ]

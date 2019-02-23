@@ -11,10 +11,10 @@ export class ProductService {
   constructor(private httpClient: HttpClient) { }
 
   public getList() {
-    return this.httpClient.get<Product[]>('http://localhost:8080/products');
+    return this.httpClient.get<Product[]>('http://localhost:4200/products');
   }
 
   public getDetail(id: number): Observable<ProductDetail>  {
-    return this.httpClient.get<ProductDetail>('http://localhost:8080/product/' + id);
+    return this.httpClient.get<ProductDetail>('http://localhost:4200/product/' + id);
   }
 }

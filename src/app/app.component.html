@@ -1,7 +1,12 @@
-<nav class="container-fluid nav-bar-display">
-  <a [routerLink]="['/products']" routerLinkActive="router-link-active">Products</a> 
-  <a [routerLink]="['/orders']" routerLinkActive="router-link-active">Your orders</a> 
-  <a class="float-right" [routerLink]="['/cart']" routerLinkActive="router-link-active">Your cart|</a>
-  <a class="float-right" [routerLink]="['/login']" routerLinkActive="router-link-active" (click)="logout()" >Logout</a>
-</nav>
+<mat-toolbar color="primary">
+  <nav style="margin-left: auto">
+    <a mat-button routerLink="/products" routerLinkActive="router-link-active">Products</a>
+    <a mat-button routerLink="/orders" routerLinkActive="router-link-active">Orders</a>
+    <a mat-button routerLink="/cart" routerLinkActive="router-link-active">Cart</a>
+    <a style="float: right" (click)="logout()" routerLinkActive="router-link-active" mat-button routerLink="/login">Logout</a>
+  </nav>
+</mat-toolbar>
+<mat-progress-bar
+  *ngIf="loading" color="accent" mode="indeterminate">
+</mat-progress-bar>
 <router-outlet></router-outlet>

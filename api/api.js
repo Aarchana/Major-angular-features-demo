@@ -5,7 +5,7 @@ const _ = require('underscore')
 const app = express()
 app.use(cors())
 
-app.listen(8080, function() {
+app.listen(4200, function() {
     console.log('Listening at ' + this.address().port)
 })
 
