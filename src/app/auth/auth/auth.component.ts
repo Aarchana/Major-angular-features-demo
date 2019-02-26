@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { UserCredential } from './UserCredential';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
@@ -11,9 +12,15 @@ import { UserCredential } from './UserCredential';
 export class AuthComponent implements OnInit {
   public userStatus: string;
   public user: UserCredential;
-  constructor(private authService: AuthService, private router: Router) { }
+  @ViewChild('f')
+  public ngForm: NgForm; 
+
+  constructor(private authService: AuthService, private router: Router) {
+    console.log("constructor");
+   }
 
   ngOnInit() {
+    console.log("constructor");
     this.user = new UserCredential();
   }
 
@@ -22,9 +29,12 @@ export class AuthComponent implements OnInit {
   }
 
   public login() {
-    this.authService.login().subscribe(res => {
-      this.router.navigate(['/profile']);
-      this.setUserStatus();
-    });
+    console.log(this.user);
+    if(this.ngForm.valid) {
+      this.authService.login().subscribe(res => {
+        this.router.navigate(['/products']);
+        this.setUserStatus();
+      });
+    }
   }
 }

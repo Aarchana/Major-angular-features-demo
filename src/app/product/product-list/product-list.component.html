@@ -1,5 +1,14 @@
-
-<div *ngFor="let product of list$ | async">
-    <a [routerLink]="[product.id]" routerLinkActive="router-link-active">{{product.name}}</a> 
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div *ngFor="let product of list$ | async">
+                <app-header [item]="product" (action)="addOrRemove($event)"></app-header>
+            </div>
+            <p>Summary</p>
+            <div>Items Added:{{counter}}</div> 
+        </div>
+        <div class="col-md-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>
-<router-outlet></router-outlet>

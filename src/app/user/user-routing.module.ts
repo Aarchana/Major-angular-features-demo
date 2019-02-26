@@ -6,9 +6,9 @@ import { UserOrdersComponent } from './user-orders/user-orders.component';
 import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
-  {path: 'cart', component: UserCartComponent, canActivate: [AuthGuard]},
-  {path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard]},
-  {path: 'orders', component: UserOrdersComponent, canActivate: [AuthGuard]}
+  {path: '', component: UserProfileComponent, canActivate: [AuthGuard]},
+  {path: 'cart', component: UserCartComponent,  canActivate: [AuthGuard]},
+  {path: 'orders', component: UserOrdersComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

@@ -5,7 +5,7 @@ const _ = require('underscore')
 const app = express()
 app.use(cors())
 
-app.listen(4200, function() {
+app.listen(3000, function() {
     console.log('Listening at ' + this.address().port)
 })
 
@@ -18,15 +18,18 @@ app.get('/login', function(req, res) {
 app.get('/products', function(req,res) {
     res.send([{
         id: 1,
-        name: "cadbury celebrations"
+        name: "cadbury celebrations",
+        descripiton: "delicious cadbury1"
     },
     {
        id: 2,
-       name: "Cadbury Marvello" 
+       name: "Cadbury Marvello",
+       descripiton: "delicious cadbury"
     },
     {
         id:3,
-        name: "Ferrero rocher"
+        name: "Ferrero rocher",
+        descripiton: "delicious cadbury"
     }
     ])
 })
@@ -38,6 +41,6 @@ app.get('/product/:id', function(req, res) {
         "category": "chocolate",
         "price": Math.ceil(Math.random() *1000),
         "rating": 4,
-        "Seller": "cadbury"
-    })}, 5000)
+        "seller": "cadbury"
+    })}, 500)
 })

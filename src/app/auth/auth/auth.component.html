@@ -1,5 +1,7 @@
-<form class="container">
-  <input type="text" class="row" [(ngModel)]="user.name" id="username" name="username"/>
-  <input type="password" class="row" [(ngModel)]="user.password" id="password" name="password"/>
-  <button class="row btn btn-primary" (click)="login()">Login</button>
+<form #f="ngForm" class="form-group" (ngSubmit)="login()">
+  Username: <input  type="text" class="form-control" [(ngModel)]="user.name" #username="ngModel" id="username" name="username" required/>
+  <p class="error" *ngIf="!username.valid && username.touched">username is required</p>
+  Password: <input type="password" class="form-control" [(ngModel)]="user.password" #password="ngModel" id="password" name="password" required/>
+  <p class="error" *ngIf="!password.valid && password.touched">password is required</p>
+  <button type="submit"class="form-control btn btn-primary">Login</button>
 </form>

@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserOrdersComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    alert();
+  }
 
   ngOnInit() {
   }

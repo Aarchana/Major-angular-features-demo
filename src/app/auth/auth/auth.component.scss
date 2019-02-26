@@ -1,4 +1,19 @@
-.container {
-    width: 60%;
+.form-group {
+    width: 25%;
+    margin: auto;
+}
+
+.btn {
+    width: 90px;
+    float: right;
     margin-top: 20px;
+    background-color: #3f51b5;
+}
+
+.error {
+    color: brown;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid brown;
 }
