@@ -36,7 +36,7 @@ app.get('/products', function(req,res) {
 
 app.get('/product/:id', function(req, res) {
     setTimeout(() => {
-    res.send({
+    res.status(400).send({
         "id": Math.ceil(Math.random() *10),
         "category": "chocolate",
         "price": Math.ceil(Math.random() *1000),

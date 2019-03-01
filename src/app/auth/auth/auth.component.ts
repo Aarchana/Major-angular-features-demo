@@ -29,7 +29,7 @@ export class AuthComponent implements OnInit {
   }
 
   public login() {
-    console.log(this.user);
+    console.log(this.ngForm);
     if(this.ngForm.valid) {
       this.authService.login().subscribe(res => {
         this.router.navigate(['/products']);
